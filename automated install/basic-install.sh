@@ -2302,8 +2302,6 @@ get_binary_name() {
 
         # Special case: This is a 32 bit OS, installed on a 64 bit machine
         # -> change machine architecture to download the 32 bit executable
-        # We only check this for Debian-based systems as this has been an issue
-        # in the past (see https://github.com/pi-hole/pi-hole/pull/2004)
         if [[ "${package_arch}" == *"i386"* ]]; then
             printf "%b  %b Detected 32bit (i686) architecture\\n" "${OVER}" "${TICK}"
             binary="pihole-FTL-linux-x86_32"
